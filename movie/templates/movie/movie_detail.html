@@ -1,0 +1,247 @@
+{%extends 'base.html' %}
+{%load static %}
+
+{%block details%}
+
+		<!-- transformers area start -->
+		<section class="transformers-area">
+			<div class="container">
+                
+				<div class="transformers-box">
+					
+					<div>
+						<h3>Triler</h3>
+						<div class="video-area">
+							<img src="{{object.banner.url}}" alt="video" />
+							<a href="{{object.movie_trailer}}" class="popup-youtube">
+								<i class="icofont icofont-ui-play"></i>
+							</a>
+						</div>
+						
+					</div>
+
+					<div class="row flexbox-center">
+						<div class="col-lg-5 text-lg-left text-center">
+							<div class="transformers-content">
+								<img src="{{object.image.url}}" alt="about" />
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="transformers-content">
+								<h2>{{object}}</h2>
+								<p>{{object.category}}</p>
+								<ul>
+									<li>
+										<div class="transformers-left">
+											Movie:
+										</div>
+										<div class="transformers-right">
+											<a href="#">{{object.category}}</a>
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Cast:
+										</div>
+										<div class="transformers-right">
+											{{object.cast}}
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Director:
+										</div>
+										<div class="transformers-right">
+											Joe Johnston
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Time: 
+										</div>
+										<div class="transformers-right">
+											190m
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Release:
+										</div>
+										<div class="transformers-right">
+											{{object.years_of_production}}
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Language:
+										</div>
+										<div class="transformers-right">
+											{{object.language}}
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Views
+										</div>
+										<div class="transformers-right">
+											{{object.views_count}}
+										</div>
+									</li>
+
+									<li>
+										<div class="transformers-left">
+											Links:
+										</div>
+										<div class="transformers-right">
+											<ul class="dlinks">
+                                                {%for link in links%}
+                                                    {%if link.type == 'D'%}
+                                                        <li><a class="theme-btn" href="{{link.link}}">Download link</a></li>
+                                                    {%elif link.type == 'W'%}
+                                                        <li><a class="theme-btn" href="{{link.link}}">Watch link</a></li>
+                                                    {%endif%}
+                                                {%endfor%}
+                                            </ul>
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Cinema:
+										</div>
+										<div class="transformers-right">
+											HB Movies  |  HW Town <a href="#" class="theme-btn">Movies House</a>Grand Seats  |  HB Max
+											<div class="transformers-bottom">
+												<p>May 19, 2018 <span>15h47</span></p>
+												<p>May 19, 2018 <span>15h47</span></p>
+												<p>May 19, 2018 <span>15h47</span></p>
+											</div>
+											
+										</div>
+									</li>
+									<li>
+										<div class="transformers-left">
+											Share:
+										</div>
+										<div class="transformers-right">
+											<a href="#"><i class="icofont icofont-social-facebook"></i></a>
+											<a href="#"><i class="icofont icofont-social-twitter"></i></a>
+											<a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+											<a href="#"><i class="icofont icofont-youtube-play"></i></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="theme-btn"><i class="icofont icofont-ticket"></i> BUY TICKET</a>
+				</div>
+			</div>
+		</section><!-- transformers area end -->
+		<!-- details area start -->
+		<section class="details-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9">
+						<div class="details-content">
+							<div class="details-overview">
+								<h2>Overview</h2>
+								<p>{{object.description}}</p>
+							</div>
+							<div class="details-reply">
+								<h2>Leave a Reply</h2>
+								<form action="#">
+									<div class="row">
+										<div class="col-lg-4">
+											<div class="select-container">
+												<input type="text" placeholder="Name"/>
+												<i class="icofont icofont-ui-user"></i>
+											</div>
+										</div>
+										<div class="col-lg-4">
+											<div class="select-container">
+												<input type="text" placeholder="Email"/>
+												<i class="icofont icofont-envelope"></i>
+											</div>
+										</div>
+										<div class="col-lg-4">
+											<div class="select-container">
+												<input type="text" placeholder="Phone"/>
+												<i class="icofont icofont-phone"></i>
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="textarea-container">
+												<textarea placeholder="Type Here Message"></textarea>
+												<button><i class="icofont icofont-send-mail"></i></button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="details-comment">
+								<a class="theme-btn theme-btn2" href="#">Post Comment</a>
+								<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>
+							</div>
+							<div class="details-thumb">
+								<div class="details-thumb-prev">
+									<div class="thumb-icon">
+										<i class="icofont icofont-simple-left"></i>
+									</div>
+									<div class="thumb-text">
+										<h4>Previous Post</h4>
+										<p>Standard Post With Gallery</p>
+									</div>
+								</div>
+								<div class="details-thumb-next">
+									<div class="thumb-text">
+										<h4>Next Post</h4>
+										<p>Standard Post With Preview Image</p>
+									</div>
+									<div class="thumb-icon">
+										<i class="icofont icofont-simple-right"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="section-title pb-20">
+							<h1><i class="icofont icofont-film"></i> Related Movies</h1>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-md-12">
+						<div class="video-slider mt-20">
+							{%for movie in related_movies%}
+							<div class="video-area">
+								<img src="{{movie.image.url}}" alt="video" />
+								<a href="{{movie.movie_trailer}}" class="popup-youtube">
+									<i class="icofont icofont-ui-play"></i>
+								</a>
+							</div>
+							{%endfor%}
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			
+			<!-- <section class="related">
+				<h3>Related Movies</h3>
+				<div class="relatemovie">
+					{%for movie in related_movies%}
+					<a href="#"><img src="{{movie.image.url}}"></a>
+					<a href="#"><span class="relatedname">{{movie.title}}</span></a>
+					{%endfor%}
+				</div>
+			</section> -->
+		</section><!-- details area end -->
+{%endblock details%}
